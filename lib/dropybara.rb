@@ -21,13 +21,17 @@ module Capybara
           driver.execute_script <<-JS
             var input = document.getElementById('#{element_id}');
             var target = document.querySelector('#{locator}');
-            var event = new CustomEvent('drop', {
+            var data = new DataTransfer();
+            data.files = input.files;
+            data.items.add(input.files[0]);
+            data.types = ['Files'];
+
+            var event = new DragEvent('drop', {
               target: target,
-              dataTransfer: {
-                files: input.files
-              }
+              dataTransfer: data
             });
             target.dispatchEvent(event);
+
             document.body.removeChild(input);
           JS
         end
