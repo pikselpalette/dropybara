@@ -8,7 +8,7 @@ No jQuery required
 
 Add to your Gemfile:
 ```
-gem 'dropybara', git: 'git@gitlab.piksel.com:sam.boylett/dropybara.git'
+gem 'dropybara'
 ```
 
 Then `bundle install`
@@ -20,7 +20,7 @@ require 'dropybara'
 
 ## Usage
 
-It takes the same arguments as `attach_file`
+It takes similar arguments to `attach_file`
 
 `page.drop_file(css_locator, path, *args)`
 
