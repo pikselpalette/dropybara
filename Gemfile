@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 group :test, :development do
   gem 'capybara'
@@ -6,6 +6,6 @@ group :test, :development do
   gem 'rack'
   gem 'rspec'
   gem 'rubocop'
-  gem 'selenium-webdriver'
   gem 'selenium'
+  gem 'selenium-webdriver'
 end
