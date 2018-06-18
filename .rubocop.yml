@@ -1,0 +1,6 @@
+Metrics/MethodLength:
+  Max: 23
+
+Style/Documentation:
+  Exclude:
+    - '**/*'
