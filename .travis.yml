@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.3
+jobs:
+  include:
+    - stage: lint
+      script:
+        - bundle exec rubocop
