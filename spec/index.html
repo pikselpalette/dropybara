@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Dropybara test page</title>
+  </head>
+  <body>
+    <div id="dropzone"></div>
+    <ol id="list"></ol>
+
+    <script type="text/javascript">
+      const list = document.querySelector('#list');
+
+      document.querySelector('#dropzone').addEventListener('drop', (event) => {
+        const items = event.dataTransfer.items;
+
+        for (let i = 0; i < items.length; i++) {
+          if (items[i].kind !== 'file') continue;
+
+          const file = items[i].getAsFile();
+
+          const listItem = document.createElement('li');
+          listItem.innerHTML = file.name;
+          list.appendChild(listItem);
+        }
+      });
+    </script>
+  </body>
+</html>
