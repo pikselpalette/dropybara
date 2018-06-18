@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Gem Version](https://badge.fury.io/rb/dropybara.svg)](https://badge.fury.io/rb/dropybara)
+[![Build Status](https://travis-ci.org/pikselpalette/dropybara.svg?branch=master)](https://travis-ci.org/pikselpalette/dropybara)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fde13facdcb24e6aa4bab1d3cda7fcba)](https://www.codacy.com/app/samboylett/dropybara?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pikselpalette/dropybara&amp;utm_campaign=Badge_Grade)
 
 This adds file drag and drop functionality to Capybara
