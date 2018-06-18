@@ -1,6 +1,9 @@
 language: ruby
 rvm:
   - 2.3
+sudo: required
+addons:
+  chrome: stable
 jobs:
   include:
     - stage: lint
