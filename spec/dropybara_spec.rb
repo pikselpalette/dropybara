@@ -10,4 +10,12 @@ describe :drop_file, js: true do
 
     expect(page).to have_content 'upload.txt'
   end
+
+  it 'removes the temporary input it uses' do
+    page.drop_file '#dropzone', File.expand_path('spec/files/upload.txt')
+
+    page.all('*').each do |node|
+      expect(node[:id]).not_to match(/^dropybara_input_/)
+    end
+  end
 end
