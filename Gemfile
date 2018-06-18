@@ -8,4 +8,5 @@ group :test, :development do
   gem 'rubocop'
   gem 'selenium'
   gem 'selenium-webdriver'
+  gem 'simplecov'
 end

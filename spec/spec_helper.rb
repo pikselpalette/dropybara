@@ -2,6 +2,12 @@ require 'bundler/setup'
 require 'rack/file'
 require 'capybara/rspec'
 require 'selenium/webdriver'
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter '/spec/'
+  minimum_coverage 100
+end
 
 Capybara.register_driver :headless_chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
