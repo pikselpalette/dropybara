@@ -1,0 +1,24 @@
+dist: trusty
+language: ruby
+rvm:
+  - 2.3
+sudo: required
+before_script:
+  - export CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`
+  - wget http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - sudo apt-get install libnss3
+  - sudo apt-get --only-upgrade install google-chrome-stable
+  - sudo cp chromedriver /usr/local/bin/.
+  - sudo chmod +x /usr/local/bin/chromedriver
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
+jobs:
+  include:
+    - stage: lint
+      script:
+        - bundle exec rubocop
+    - stage: test
+      script:
+        - bundle exec rspec

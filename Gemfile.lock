@@ -1,0 +1,89 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    ast (2.4.0)
+    capybara (3.2.1)
+      addressable
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      xpath (~> 3.1)
+    childprocess (0.9.0)
+      ffi (~> 1.0, >= 1.0.11)
+    diff-lcs (1.3)
+    docile (1.3.1)
+    ffi (1.9.25)
+    jar_wrapper (0.1.8)
+      zip
+    jaro_winkler (1.5.1)
+    json (2.1.0)
+    mini_mime (1.0.0)
+    mini_portile2 (2.3.0)
+    nokogiri (1.8.3)
+      mini_portile2 (~> 2.3.0)
+    parallel (1.12.1)
+    parser (2.5.1.0)
+      ast (~> 2.4.0)
+    powerpack (0.1.2)
+    public_suffix (3.0.2)
+    puma (3.11.4)
+    rack (2.0.5)
+    rack-test (1.0.0)
+      rack (>= 1.0, < 3)
+    rainbow (3.0.0)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+    rspec-core (3.7.1)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.1)
+    rubocop (0.57.2)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.5)
+      powerpack (~> 0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.9.0)
+    rubyzip (1.2.1)
+    selenium (0.2.11)
+      jar_wrapper
+    selenium-webdriver (3.12.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2)
+    simplecov (0.16.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
+    unicode-display_width (1.4.0)
+    xpath (3.1.0)
+      nokogiri (~> 1.8)
+    zip (2.0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  capybara
+  puma
+  rack
+  rspec
+  rubocop
+  selenium
+  selenium-webdriver
+  simplecov
+
+BUNDLED WITH
+   1.16.2
