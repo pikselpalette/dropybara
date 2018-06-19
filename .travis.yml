@@ -1,10 +1,20 @@
-os: osx
+dist: trusty
 language: ruby
 rvm:
   - 2.3
 sudo: required
 addons:
   chrome: stable
+before_script:
+  - wget http://chromedriver.storage.googleapis.com/2.27/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - sudo apt-get install libnss3
+  - sudo apt-get --only-upgrade install google-chrome-stable
+  - sudo cp chromedriver /usr/local/bin/.
+  - sudo chmod +x /usr/local/bin/chromedriver
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
 jobs:
   include:
     # - stage: lint
