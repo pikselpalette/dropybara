@@ -3,10 +3,9 @@ language: ruby
 rvm:
   - 2.3
 sudo: required
-addons:
-  chrome: stable
 before_script:
-  - wget http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip
+  - export CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`
+  - wget http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - sudo apt-get install libnss3
   - sudo apt-get --only-upgrade install google-chrome-stable
