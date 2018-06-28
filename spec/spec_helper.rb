@@ -9,6 +9,9 @@ SimpleCov.start do
   minimum_coverage 100
 end
 
+require 'codecov'
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
+
 Capybara.register_driver :headless_chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
     chromeOptions: { args: %w[no-sandbox headless disable-gpu] }
