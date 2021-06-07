@@ -27,6 +27,7 @@ module Capybara
             data.types = ['Files'];
 
             var event = new DragEvent('drop', {
+              bubbles: true,
               target: target,
               dataTransfer: data
             });
