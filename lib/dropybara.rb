@@ -14,16 +14,19 @@ module Capybara
           var input = document.createElement('input');
           input.setAttribute('type', 'file');
           input.setAttribute('id', '#{element_id}')
+          input.setAttribute('multiple', '');
           document.body.appendChild(input);
         JS
 
-        attach_file(element_id, *args).tap do
+        attach_file(element_id, args).tap do
           driver.execute_script <<-JS
             var input = document.getElementById('#{element_id}');
             var target = document.querySelector('#{locator}');
             var data = new DataTransfer();
             data.files = input.files;
-            data.items.add(input.files[0]);
+            for (var i = 0; i < input.files.length; i++) {
+              data.items.add(input.files[i]);
+            }
             data.types = ['Files'];
 
             var event = new DragEvent('drop', {

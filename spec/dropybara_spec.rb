@@ -17,6 +17,15 @@ describe :drop_file, js: true do
     expect(page).to have_content 'upload.txt'
   end
 
+  it 'can drop multiple files on an element' do
+    first_file = File.expand_path('spec/files/upload.txt')
+    second_file = File.expand_path('spec/files/second-upload.txt')
+    page.drop_file '#dropzone', first_file, second_file
+
+    expect(page).to have_content 'upload.txt'
+    expect(page).to have_content 'second-upload.txt'
+  end
+
   it 'removes the temporary input it uses' do
     page.drop_file '#dropzone', File.expand_path('spec/files/upload.txt')
 
